@@ -87,11 +87,11 @@
 
 
         function questionSix(){
-            const delay = (func,ms) => (...arg) => setTimeout(() => func.apply(null , arg), 300) ;
+            const delay = (func,ms) => (...arg) => setTimeout(() => func.apply(null , arg), ms) 
 
             const hello = ( who ) => console.log('Hello ' + who);
         
-            const delayHello = delay(hello, 300);
+            const delayHello = delay(hello, 3000);
         
             delayHello('world');
 
