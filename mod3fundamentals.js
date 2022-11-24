@@ -87,31 +87,37 @@
 
 
         function questionSix(){
-            console.clear();
-            var hello;
-            who = ' Antonio'; 
-            console.log('Hello' + who + ' and...')
-            setTimeout(() => {console.log('World')}, 4400)
-            }
+            const delay = (func,ms) => (...arg) => setTimeout(() => func.apply(null , arg), 300) ;
+
+            const hello = ( who ) => console.log('Hello ' + who);
+        
+            const delayHello = delay(hello, 300);
+        
+            delayHello('world');
+
+        }
 
 
         function questionSeven(){
             console.clear();
-            function _isEmpty(schedule) {
-                if (schedule === '') {
-                    console.log(true);
-                } else {
-                    console.log('get up');
+            //Write isEmpty function here
+            function isEmpty(schedule){
+                for (let key in schedule){
+                    return false;
                 }
-            }
-            schedule1 = ''; 
-            schedule2 = 'Gotta go fishing!';
-        
-            _isEmpty(schedule2); 
-            _isEmpty(schedule1);
+                    return true; 
+            } 
+
+            let schedule = {};
+
+            alert( isEmpty(schedule) ) // true
+
+            schedule['8:30'] = "get up";
+
+            alert (isEmpty(schedule) ) // false
         }
 
-        function questionEigt(){
+        function questionEight(){
             console.clear();
             let ladder = {
                 step: 10,
@@ -133,6 +139,32 @@
             ladder.up().up().down().down().up().up().up().down().showStep();
         }
         
+// 9: Create New Accumulator
+//Create a constructor function Accumulator(startingValue).
+//Object that it creates should:
+
+//  1: Store the "current value" in the property value. The starting value
+//  is set to the argument of the constructor startingValue
+//
+//  2: The read() method should use prompt to read a new number and add it to value
+
+//In other words, the value property is the sum of all user-entered
+//values with the initial value startingValue
+
+//Here's the demo of the code:
+
+function questionNine() {
+    //Write constructor function here
+    
+
+    let accumulator = new Accumulator(1); //initial value 1
+
+    accumulator.read(); //adds the user-entered value
+
+    accumulator.read(); //adds the user-entered value
+
+    console.log(accumulator.value); // shows the sum of these values
+}
     
     
         

@@ -1,18 +1,35 @@
 <script>
 
-    function _isEmpty(schedule) {
-        if (schedule === '') {
-            console.log(true);
-        } else {
-            console.log('get up');
-        }
-    }
-    schedule1 = ''; 
-    schedule2 = 'Gotta go fishing!';
+    // function isEmpty(schedule) {
+    //     if (schedule === '') {
+    //         console.log(true);
+    //     } else {
+    //         console.log('get up');
+    //     }
+    // }
+    // schedule1 = ''; 
+    // schedule2 = '8.30';
 
-    _isEmpty(schedule1); 
-    _isEmpty(schedule2);
+    // isEmpty(schedule1); 
+    // isEmpty(schedule2);
 
+
+
+        //Write isEmpty function here
+        function isEmpty(schedule){
+            for (let key in schedule){
+                return false;
+            }
+            return true; 
+        } 
+
+        let schedule = {};
+
+        alert( isEmpty(schedule) ) // true
+
+        schedule['8:30'] = "get up";
+
+        alert (isEmpty(schedule) ) // false
 
 
 </script>

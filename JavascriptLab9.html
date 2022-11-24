@@ -1,5 +1,6 @@
 <script>
-    //Create a constructor function Accumulator(startingValue).
+        // 9: Create New Accumulator
+//Create a constructor function Accumulator(startingValue).
 //Object that it creates should:
 
 //  1: Store the "current value" in the property value. The starting value
@@ -12,8 +13,16 @@
 
 //Here's the demo of the code:
 
-function questionNine() {
     //Write constructor function here
+
+    function Accumulator(startingValue){
+        this.value = startingValue;
+        this.read = function(){
+            this.value = prompt('Add?',0);         
+        };
+
+        } 
+
 
     let accumulator = new Accumulator(1); //initial value 1
 
@@ -22,6 +31,9 @@ function questionNine() {
     accumulator.read(); //adds the user-entered value
 
     console.log(accumulator.value); // shows the sum of these values
-}
 
+
+
+
+    
 </script>
